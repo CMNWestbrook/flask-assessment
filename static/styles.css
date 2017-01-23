@@ -1,0 +1,26 @@
+/* Your CSS goes here */
+
+    body{background-color: #89b2ff;
+    }
+
+    h1{ color: #06095e;
+        font-family: serif;
+    }
+
+    h3{ color: #3a0704;
+        font-family: serif;
+    }
+
+    .needsborder{
+        border-color: #aa0000;
+        border-width: 2px;
+        border-style: solid;
+    }
+
+    input, textarea {
+        background-color : #ffff00;
+    }
+
+    #lastname{
+        font-weight: bold;
+    }

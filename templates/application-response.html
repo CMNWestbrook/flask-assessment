@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+
+{% block title %} Your Application is Successful! {% endblock %}
+
+
+{% block content %}
+    <h3></h3>
+    <br />
+
+    <p>
+    Thanks a ton for your application {{ firstname }} {{ lastname }}!<br />
+    Your minimum salary requirement is {{ "${:.2f}".format(salaryrequirement|float) }} for the position of {{ job }}.
+    </p>
+
+{% endblock %}

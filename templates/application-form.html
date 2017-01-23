@@ -1,0 +1,34 @@
+
+{% extends 'base.html' %}
+
+{% block title %} Application Form {% endblock %} 
+
+
+{% block content %}
+
+    <h1>Application Form</h1>
+<br />
+
+<div><h3 class="needsborder">Please fill out the following information and indicate which position you are applying for.</h3></div>
+
+<form action="/application-success" method="POST">
+    <label for="firstname">First Name: </label><input id="firstname" type="text" name="firstname"> <br /><br />
+    <label for="lastname">Last Name: </label><input id="lastname" type="text" name="lastname"> <br /><br />
+    Salary Requirement: <input id="salaryrequirement" type="number" name="salaryrequirement"> <br /><br />
+
+    Which job are you applying for?<br />
+    <input id="softwareengineer" type="radio" name="job" value="softwareengineer">
+    <label for="softwareengineer"> Software Engineer </label><br />
+    
+    <input id="qaengineer" type="radio" name="job" value="quengineer">
+    <label for="qaengineer"> QA Engineer </label><br />
+   
+    <input id="productmanager" type="radio" name="job" value="productmanager">
+    <label for="productmanager"> Product Manager </label><br />
+
+    <br />
+    <input type="submit" name="submit" value="Submit">
+
+</form>
+
+{% endblock %}
