@@ -10,7 +10,7 @@
 
     <p>
     Thanks a ton for your application {{ firstname }} {{ lastname }}!<br />
-    Your minimum salary requirement is {{ "${:.2f}".format(salaryrequirement|float) }} for the position of {{ job }}.
+    Your minimum salary requirement is {{ "${:,.2f}".format(salaryrequirement|float) }} for the position of {{ job }}.
     </p>
 
 {% endblock %}

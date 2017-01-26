@@ -18,34 +18,36 @@ def index():
     # return redirect('index.html')
     return render_template('index.html')
 
-@app.route('/application-form', methods=["POST"])
+@app.route('/application-form')
 def application_form():
     """Returns the application-form.html page"""
 
     return render_template('application-form.html')
 
-@app.route('/application-success')
+@app.route('/application-success', methods=["POST"])
 def application_response():
     """Returns the application response with information filled in"""
-    first_name = request.args.get("firstname")
-    last_name = request.args.get("lastname")
-    salary_requirement = request.args.get("salaryrequirement")
+    first_name = request.form.get("firstname", "No first name?")
+    last_name = request.form.get("lastname", "LAsttt")
+    salary_requirement = request.form.get("salaryrequirement", "all the money")
+    job = request.form.get('job', 'CEO')
     # job = request.args.get("job")
 
-    if request.args.get("job") == "softwareengineer":
-        job_title = "Software Engineer"
+    if request.form['job'] == "softwareengineer":
+        job = "Software Engineer" 
 
-    elif request.args.get("job") == "qaengineer":
-        job_title = "QA Engineer"
+    elif request.form['job'] == "qaengineer":
+        job = "QA Engineer"
 
-    elif request.args.get("job") == "productmanager":
-        job_title = "Product Manager"
+    elif request.form['job'] == "productmanager":
+        job = "Product Manager"
+
 
     return render_template('application-response.html',
                            firstname=first_name,
                            lastname=last_name,
                            salaryrequirement=salary_requirement,
-                           job=job_title
+                           job=job
                            )
 
 
@@ -58,5 +60,6 @@ if __name__ == "__main__":
     DebugToolbarExtension(app)
 
     # app.run(host="localhost")
-    app.run(host="127.0.0.1")
+    # app.run(host="127.0.0.1")
+    app.run(host="0.0.0.0")
     # app.run(host="0.0.0.0", port=8000)
